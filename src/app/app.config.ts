@@ -2,11 +2,16 @@ import { ApplicationConfig, importProvidersFrom, provideBrowserGlobalErrorListen
 import { provideRouter } from '@angular/router';
 import {
   Car,
+  ChevronRight,
+  Clock,
   Droplets,
   Hammer,
   LucideAngularModule,
+  Mail,
+  MapPin,
   MessageCircle,
   Paintbrush,
+  Phone,
   ShieldCheck,
   Sparkle,
   Zap,
@@ -28,6 +33,11 @@ export const appConfig: ApplicationConfig = {
         Sparkle,
         Car,
         MessageCircle,
+        Mail,
+        Clock,
+        MapPin,
+        Phone,
+        ChevronRight,
       })
     ),
   ],

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [],
+  imports: [LucideAngularModule],
   templateUrl: './hero-section.html',
 })
 export class HeroSectionComponent {
