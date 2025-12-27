@@ -1,0 +1,56 @@
+<section id="servicos" class="bg-[#1A1A1A] py-24">
+  <div class="container mx-auto px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <span class="text-[#FFC107] uppercase tracking-[0.3em] text-sm"> Nossos Serviços </span>
+      <h2 class="font-['Archivo_Black'] text-5xl text-white uppercase mt-4 mb-6">
+        Excelência em Cada Detalhe
+      </h2>
+      <p class="text-white/60 text-lg max-w-2xl mx-auto">
+        Equipamento de última geração e técnicos certificados para resultados impecáveis.
+      </p>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="grid md:grid-cols-3 gap-6 auto-rows-[240px]">
+      @for (service of services; track service.title) {
+      <div
+        [class]="
+          service.gridClass +
+          ' group relative overflow-hidden rounded-lg border border-white/10 hover:border-[#FFC107]/50 transition-all duration-500 cursor-pointer'
+        "
+      >
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+          <img
+            [src]="service.image"
+            [alt]="service.title"
+            class="w-full h-full object-cover group-hover:opacity-80 group-hover:scale-110 transition-all duration-700"
+          />
+          <div
+            class="absolute inset-0 bg-linear-to-t from-[#1A1A1A] via-[#1A1A1A]/50 to-transparent"
+          ></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative h-full p-8 flex flex-col justify-end">
+          <div
+            class="bg-[#FFC107]/10 w-fit p-3 rounded-md border border-[#FFC107]/20 mb-4 group-hover:bg-[#FFC107] group-hover:scale-110 transition-all duration-300"
+          >
+            <lucide-icon
+              [name]="service.iconName"
+              class="w-6 h-6 text-[#FFC107] group-hover:text-[#1A1A1A]"
+            ></lucide-icon>
+          </div>
+          <h3 class="font-['Inter'] text-2xl text-white uppercase tracking-tight mb-2">
+            {{ service.title }}
+          </h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            {{ service.description }}
+          </p>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

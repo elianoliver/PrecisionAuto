@@ -1,0 +1,104 @@
+<section id="antes-depois" class="bg-[#0F0F0F] py-24">
+  <div class="container mx-auto px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <span class="text-[#FFC107] uppercase tracking-[0.3em] text-sm"> Prova Real </span>
+      <h2 class="font-['Archivo_Black'] text-5xl text-white uppercase mt-4 mb-6">Antes & Depois</h2>
+      <p class="text-white/60 text-lg max-w-2xl mx-auto">
+        Veja a transformação que nossos especialistas podem fazer no seu veículo.
+      </p>
+    </div>
+
+    <!-- Interactive Comparison -->
+    <div class="max-w-5xl mx-auto">
+      <div
+        class="lg:h-150 h-100 relative overflow-hidden rounded-lg border border-white/10 cursor-ew-resize select-none"
+        (mousemove)="handleMouseMove($event)"
+        (touchmove)="handleTouchMove($event)"
+      >
+        <!-- Before Image -->
+        <div class="relative w-full h-full">
+          <img
+            src="https://images.unsplash.com/photo-1759794158476-c750603d3ba1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjYXIlMjBwYWludCUyMHNoaW5lfGVufDF8fHx8MTc2NjY4NTgwNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            alt="Carro depois do reparo"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute top-8 right-8 bg-[#FFC107] text-[#1A1A1A] px-4 py-2 rounded-md uppercase tracking-wider"
+          >
+            Depois
+          </div>
+        </div>
+
+        <!-- After Image -->
+        <div
+          class="absolute top-0 left-0 w-full h-full overflow-hidden"
+          [style.clipPath]="'inset(0 ' + (100 - sliderPosition()) + '% 0 0)'"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1725199984598-20faa3755843?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYW1hZ2VkJTIwY2FyJTIwZGVudCUyMGJlZm9yZXxlbnwxfHx8fDE3NjY2ODU4MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            alt="Carro antes do reparo"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute top-8 left-8 bg-red-600 text-white px-4 py-2 rounded-md uppercase tracking-wider"
+          >
+            Antes
+          </div>
+        </div>
+
+        <!-- Slider Handle -->
+        <div class="absolute top-0 bottom-0 w-1 bg-white" [style.left.%]="sliderPosition()">
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-2xl"
+          >
+            <div class="flex items-center gap-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-[#1A1A1A]"
+              >
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-[#1A1A1A]"
+              >
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid md:grid-cols-4 gap-8 mt-12">
+        @for (stat of stats; track stat.label) {
+        <div class="text-center border border-white/10 rounded-lg p-6 bg-[#1A1A1A]/50">
+          <div class="font-['Archivo_Black'] text-3xl text-[#FFC107] mb-2">
+            {{ stat.value }}
+          </div>
+          <div class="text-white/60 text-sm uppercase tracking-wider">
+            {{ stat.label }}
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
