@@ -1,59 +1,59 @@
-# Matt
+# Precision Auto - Landing Page
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
+Este é um projeto de portfólio que demonstra a criação de uma landing page moderna e responsiva para uma empresa de serviços automotivos, a "Precision Auto". O projeto foi desenvolvido com Angular e projetado para ser visualmente atraente e de alto desempenho.
 
-## Development server
+## ✨ Visão Geral
 
-To start a local development server, run:
+O objetivo deste projeto é mostrar minhas habilidades em desenvolvimento front-end com Angular, criando uma experiência de usuário limpa, profissional e eficaz para converter visitantes em clientes.
 
-```bash
-ng serve
-```
+➡️ **[Veja a demonstração ao vivo](#) (link a ser adicionado)**
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🚀 Funcionalidades
 
-## Code scaffolding
+*   **Design Responsivo:** Totalmente adaptável a desktops, tablets e dispositivos móveis.
+*   **Seção de Herói Atraente:** Uma primeira impressão impactante com um call-to-action claro.
+*   **Grade de Serviços:** Apresentação clara e organizada dos serviços oferecidos.
+*   **Galeria "Antes e Depois":** Um componente visual para mostrar a qualidade do trabalho.
+*   **Símbolos de Confiança:** Emblemas e ícones para construir a credibilidade da marca.
+*   **Rodapé com CTA:** Um call-to-action final para incentivar o contato.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🛠️ Tecnologias Utilizadas
 
-```bash
-ng generate component component-name
-```
+*   **Framework:** [Angular](https://angular.io/)
+*   **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
+*   **Estilização:** SCSS e [Tailwind](https://tailwindcss.com/) para componentes de UI.
+*   **Ícones:** [Lucide-Angular](https://github.com/lucide-icons/lucide-angular) para ícones SVG limpos e consistentes.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📸 Screenshots
 
-```bash
-ng generate --help
-```
+*(Adicione aqui screenshots da aplicação em diferentes dispositivos)*
 
-## Building
+<!-- 
+![Desktop View](URL_PARA_IMAGEM_DESKTOP)
+![Mobile View](URL_PARA_IMAGEM_MOBILE) 
+-->
 
-To build the project run:
+## ⚙️ Como Começar
 
-```bash
-ng build
-```
+Para executar este projeto localmente, siga os passos abaixo:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/seu-usuario/precision-auto.git
+    cd precision-auto
+    ```
 
-## Running unit tests
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+3.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    npm start
+    ```
+    Abra seu navegador e acesse `http://localhost:4200/`. A aplicação será recarregada automaticamente se você alterar algum dos arquivos de origem.
 
-```bash
-ng test
-```
+## 📜 Licença
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.

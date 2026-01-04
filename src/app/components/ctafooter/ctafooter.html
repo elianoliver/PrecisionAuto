@@ -2,16 +2,12 @@
 <section id="contato" class="bg-[#1A1A1A] py-24 relative overflow-hidden">
   <div class="absolute inset-0 opacity-10">
     <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FFC107] rounded-full blur-[150px]"></div>
-    <div
-      class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#007BFF] rounded-full blur-[150px]"
-    ></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#007BFF] rounded-full blur-[150px]"></div>
   </div>
 
   <div class="container mx-auto px-8 relative z-10">
     <div class="max-w-4xl mx-auto text-center mb-16">
-      <h2
-        class="font-['Archivo_Black'] sm:text-6xl text-4xl text-white uppercase mb-6 leading-tight"
-      >
+      <h2 class="font-['Archivo_Black'] sm:text-6xl text-4xl text-white uppercase mb-6 leading-tight">
         Pronto para Transformar<br />
         <span class="text-[#FFC107]">Seu Veículo?</span>
       </h2>
@@ -19,46 +15,79 @@
         Agende uma avaliação gratuita e receba um orçamento personalizado em 24h.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <button
-          class="bg-[#FFC107] text-[#1A1A1A] px-5 py-5 rounded-md font-['Inter'] uppercase tracking-wide hover:bg-[#FFD54F] transition-all hover:scale-105"
-        >
+        <button class="bg-[#FFC107] text-[#1A1A1A] px-5 py-5 rounded-md font-['Inter'] uppercase tracking-wide hover:bg-[#FFD54F] transition-all hover:scale-105">
           Solicitar Orçamento Grátis
         </button>
-        <button
+
+        <!-- Corrigido: Transforme em <a> estilizado como botão, removendo o <button> ao redor -->
+        <a
+          [href]="contactsMap['phone']?.link"
+          [target]="contactsMap['phone']?.target"
+          [rel]="contactsMap['phone']?.rel"
           class="border-2 border-white/20 text-white px-10 py-5 rounded-md font-['Inter'] uppercase tracking-wide hover:border-[#FFC107] hover:text-[#FFC107] transition-all"
-        >
-          (11) 98765-4321
-        </button>
+          aria-label="Ligue Agora">
+          {{ contactsMap['phone']?.detail?.[0] || 'Ligue Agora' }}
+        </a>
       </div>
     </div>
 
     <!-- Contact Info Grid -->
     <div class="grid lg:grid-cols-4 grid-cols-2 gap-8 mt-20">
-      @for (item of contact; track item.iconName) {
-      <div class="text-center">
-        <div class="bg-[#FFC107]/10 w-fit p-4 rounded-md border border-[#FFC107]/20 mx-auto mb-4">
-          <lucide-icon [name]="item.iconName" class="w-6 h-6 text-[#FFC107]"></lucide-icon>
-        </div>
-        <h4 class="text-white uppercase tracking-wider mb-2">{{ item.title }}</h4>
-        <p class="text-white/60 text-sm">
-          @if (isArray(item.detail)) { @for (line of item.detail; track line; let isLast = $last) {
-          {{ line }}@if (!isLast) {<br />} } } @else {
-          {{ item.detail }}
-          }
-        </p>
-      </div>
+      @for (item of contactsList; track item.iconName) {
+        @if (item.iconName !== 'message-circle') {
+          <div class="text-center">
+            <!-- Caso tenha link: usa <a> -->
+            @if (item.link) {
+              <a
+                [href]="item.link"
+                [target]="item.target ?? '_blank'"
+                [rel]="item.rel ?? 'noopener noreferrer'"
+                class="group block cursor-pointer">
+                <div class="bg-[#FFC107]/10 w-fit p-4 rounded-md border border-[#FFC107]/20 mx-auto mb-4 group-hover:bg-[#FFC107]/20 transition-colors">
+                  <lucide-icon [name]="item.iconName" class="w-6 h-6 text-[#FFC107]"></lucide-icon>
+                </div>
+                <h4 class="text-white uppercase tracking-wider mb-2 group-hover:text-[#FFC107] transition-colors">
+                  {{ item.title }}
+                </h4>
+                <p class="text-white/60 text-sm">
+                  @for (line of item.detail; track line; let isLast = $last) {
+                    {{ line }}@if (!isLast) {<br />}
+                  }
+                  @if (item.description) {
+                    <br /><span class="text-white/40 text-xs">{{ item.description }}</span>
+                  }
+                </p>
+              </a>
+            } @else {
+              <!-- Caso NÃO tenha link: usa <div> -->
+              <div class="group cursor-default">
+                <div class="bg-[#FFC107]/10 w-fit p-4 rounded-md border border-[#FFC107]/20 mx-auto mb-4 group-hover:bg-[#FFC107]/20 transition-colors">
+                  <lucide-icon [name]="item.iconName" class="w-6 h-6 text-[#FFC107]"></lucide-icon>
+                </div>
+                <h4 class="text-white uppercase tracking-wider mb-2 group-hover:text-[#FFC107] transition-colors">
+                  {{ item.title }}
+                </h4>
+                <p class="text-white/60 text-sm">
+                  @for (line of item.detail; track line; let isLast = $last) {
+                    {{ line }}@if (!isLast) {<br />}
+                  }
+                </p>
+              </div>
+            }
+          </div>
+        }
       }
-
     </div>
   </div>
 </section>
 
-<!-- Footer -->
+<!-- Footer (sem mudanças, já legível) -->
 <footer class="bg-[#0F0F0F] border-t border-white/5 py-8">
   <div class="container mx-auto px-8">
     <div class="flex flex-col md:flex-row md:justify-between justify-center items-center gap-4">
       <div class="text-white/40 text-sm">
-        © 2025 Precision Auto. Desenvolvido por <a href="https://elian.dev.br/">elian.dev</a>
+        © 2025 Cezar Funilaria & Pintura. Desenvolvido por
+        <a href="https://elian.dev.br/" target="_blank" rel="noopener noreferrer">elian.dev</a>
       </div>
       <div class="flex gap-8 text-white/40 text-sm">
         <a href="#" class="hover:text-[#FFC107] transition-colors">Política de Privacidade</a>
@@ -68,18 +97,14 @@
   </div>
 </footer>
 
-<!-- Floating WhatsApp Button -->
+<!-- Floating WhatsApp Button (sem mudanças, já legível) -->
 <a
-  [href]="whatsapp.whatsAppLink"
-  [target]="whatsapp.target"
-  [rel]="whatsapp.rel"
-  class="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-50 group"
->
-  <lucide-icon [name]="whatsapp.iconName" class="w-6 h-6"></lucide-icon>
-
-  <span
-    class="absolute right-full mr-4 bg-white text-[#1A1A1A] px-4 py-2 rounded-md text-sm font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-xl"
-  >
-    {{ whatsapp.title }}
+  [href]="contactsMap['message-circle']?.link"
+  [target]="contactsMap['message-circle']?.target"
+  [rel]="contactsMap['message-circle']?.rel"
+  class="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-50 group">
+  <lucide-icon [name]="contactsMap['message-circle']?.iconName" class="w-6 h-6"></lucide-icon>
+  <span class="absolute right-full bottom-2 mr-4 bg-white text-[#1A1A1A] px-4 py-2 rounded-md text-sm font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-xl">
+    {{ contactsMap['message-circle']?.title }}
   </span>
 </a>
