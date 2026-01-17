@@ -6,7 +6,7 @@ Este é um projeto de portfólio que demonstra a criação de uma landing page m
 
 O objetivo deste projeto é mostrar minhas habilidades em desenvolvimento front-end com Angular, criando uma experiência de usuário limpa, profissional e eficaz para converter visitantes em clientes.
 
-➡️ **[Veja a demonstração ao vivo](#) (link a ser adicionado)**
+➡️ **[Veja a demonstração ao vivo](https://plum-flamingo-170638.hostingersite.com/)**
 
 ## 🚀 Funcionalidades
 
