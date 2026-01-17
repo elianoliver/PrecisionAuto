@@ -1,6 +1,6 @@
-# Precision Auto - Landing Page
+# Cezar Funilaria - Landing Page
 
-Este é um projeto de portfólio que demonstra a criação de uma landing page moderna e responsiva para uma empresa de serviços automotivos, a "Precision Auto". O projeto foi desenvolvido com Angular e projetado para ser visualmente atraente e de alto desempenho.
+Este é um projeto de portfólio que demonstra a criação de uma landing page moderna e responsiva para uma empresa de serviços automotivos, a "Cezar Funilaria". O projeto foi desenvolvido com Angular e projetado para ser visualmente atraente e de alto desempenho.
 
 ## ✨ Visão Geral
 
@@ -32,27 +32,6 @@ O objetivo deste projeto é mostrar minhas habilidades em desenvolvimento front-
 ![Desktop View](URL_PARA_IMAGEM_DESKTOP)
 ![Mobile View](URL_PARA_IMAGEM_MOBILE) 
 -->
-
-## ⚙️ Como Começar
-
-Para executar este projeto localmente, siga os passos abaixo:
-
-1.  **Clone o repositório:**
-    ```bash
-    git clone https://github.com/seu-usuario/precision-auto.git
-    cd precision-auto
-    ```
-
-2.  **Instale as dependências:**
-    ```bash
-    npm install
-    ```
-
-3.  **Inicie o servidor de desenvolvimento:**
-    ```bash
-    npm start
-    ```
-    Abra seu navegador e acesse `http://localhost:4200/`. A aplicação será recarregada automaticamente se você alterar algum dos arquivos de origem.
 
 ## 📜 Licença
 
