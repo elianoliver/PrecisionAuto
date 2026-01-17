@@ -52,7 +52,7 @@ export class CTAFooterComponent {
     {
       iconName: 'mail',
       title: 'Email',
-      detail: ['contato@precisionauto.com.br'],
+      detail: ['contato@precisionauto'],
       link: 'mailto:contato@precisionauto.com.br',
       target: '_self',
     },

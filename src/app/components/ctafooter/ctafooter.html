@@ -15,18 +15,14 @@
         Agende uma avaliação gratuita e receba um orçamento personalizado em 24h.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <button class="bg-[#FFC107] text-[#1A1A1A] px-5 py-5 rounded-md font-['Inter'] uppercase tracking-wide hover:bg-[#FFD54F] transition-all hover:scale-105">
-          Solicitar Orçamento Grátis
-        </button>
-
-        <!-- Corrigido: Transforme em <a> estilizado como botão, removendo o <button> ao redor -->
         <a
-          [href]="contactsMap['phone']?.link"
-          [target]="contactsMap['phone']?.target"
-          [rel]="contactsMap['phone']?.rel"
-          class="border-2 border-white/20 text-white px-10 py-5 rounded-md font-['Inter'] uppercase tracking-wide hover:border-[#FFC107] hover:text-[#FFC107] transition-all"
-          aria-label="Ligue Agora">
-          {{ contactsMap['phone']?.detail?.[0] || 'Ligue Agora' }}
+          [href]="contactsMap['message-circle']?.link"
+          [target]="contactsMap['message-circle']?.target"
+          [rel]="contactsMap['message-circle']?.rel"
+        >
+          <button class="bg-[#FFC107] text-[#1A1A1A] px-5 py-5 rounded-md font-['Inter'] uppercase tracking-wide hover:bg-[#FFD54F] transition-all hover:scale-105">
+            Solicitar Orçamento Grátis
+          </button>
         </a>
       </div>
     </div>
@@ -85,7 +81,7 @@
 <footer class="bg-[#0F0F0F] border-t border-white/5 py-8">
   <div class="container mx-auto px-8">
     <div class="flex flex-col md:flex-row md:justify-between justify-center items-center gap-4">
-      <div class="text-white/40 text-sm">
+      <div class="text-white/40 text-sm text-center">
         © 2025 Cezar Funilaria & Pintura. Desenvolvido por
         <a href="https://elian.dev.br/" target="_blank" rel="noopener noreferrer">elian.dev</a>
       </div>
